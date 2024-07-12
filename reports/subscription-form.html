@@ -94,15 +94,15 @@
       background-color: #b03d27;
     }
     .add-competitor-btn {
-            background-color: #797573;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-        align-self: end;
+      background-color: #797573;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+      align-self: end;
     }
   </style>
 </head>
@@ -110,7 +110,7 @@
   <div class="container">
     <img src="petplace.webp" alt="PetPlace Logo" class="logo">
     <h1>Register Competitor Websites</h1>
-    <form action="/reports/register-competitors.html" method="post">
+    <form action="https://main--petplace--absarasw.hlx.live/reports/register-competitors.html" method="post" id="competitorForm">
       <div class="add-competitor">
         <label for="competitor1">Competitor Website 1</label>
         <input type="url" id="competitor1" name="competitor1" placeholder="https://example.com">
@@ -126,7 +126,7 @@
   
   <script>
     const addCompetitorBtn = document.querySelector('.add-competitor-btn');
-    const competitorForm = document.querySelector('form');
+    const competitorForm = document.getElementById('competitorForm');
     const numCompetitorsInput = document.getElementById('num_competitors');
 
     // Function to create a new competitor input field
@@ -154,6 +154,12 @@
 
     // Add click event listener to the "Add Competitor" button
     addCompetitorBtn.addEventListener('click', addCompetitorField);
+
+    // Redirect function after form submission
+    competitorForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      window.location.href = 'https://main--petplace--absarasw.hlx.live/reports/register-competitors.html';
+    });
   </script>
 </body>
 </html>
